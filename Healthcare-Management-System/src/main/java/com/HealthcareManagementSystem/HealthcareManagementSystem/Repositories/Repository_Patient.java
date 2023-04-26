@@ -1,4 +1,7 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Repositories;
 
-public interface Repository_Patient {
+import com.HealthcareManagementSystem.HealthcareManagementSystem.Models.Patient;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Repository_Patient extends JpaRepository<Patient, Integer> {
 }
