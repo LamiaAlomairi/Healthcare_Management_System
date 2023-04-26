@@ -16,4 +16,8 @@ public class Test_result {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Test_id")
     Integer test_id;
+
+    @ManyToOne
+    @JoinColumn(name = "Patient_id")
+    Patient patient;
 }

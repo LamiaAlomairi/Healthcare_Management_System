@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "medical_appointment")
 public class Controller_Medical_appointment {
+    //     http://localhost:8080/medical_appointment/getAll
     @Autowired
     Service_Medical_appointment service_medical_appointment;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)

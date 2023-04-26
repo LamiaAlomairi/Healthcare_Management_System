@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "hospital")
 public class Controller_Hospital {
+    //    http://localhost:8080/hospital/getAll
     @Autowired
     Service_Hospital service_hospital;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)

@@ -1,10 +1,12 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,4 +27,17 @@ public class Patient {
 
     @Column(name = "Phone_number")
     Integer phone_number;
+
+
+    @OneToMany(mappedBy = "patient")
+    @JsonIgnore
+    private List<Medical_record> medicalRecords;
+
+    @OneToMany(mappedBy = "patient")
+    @JsonIgnore
+    List<Test_result> testResults;
+
+    @ManyToOne
+    @JoinColumn(name = "Doctor_id", referencedColumnName = "Doctor_id")
+    Doctor doctor;
 }

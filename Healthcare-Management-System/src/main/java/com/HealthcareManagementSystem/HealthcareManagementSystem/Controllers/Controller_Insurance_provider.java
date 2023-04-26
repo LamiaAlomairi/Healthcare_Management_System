@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "insurance")
 public class Controller_Insurance_provider {
+    //   http://localhost:8080/insurance/getAll
     @Autowired
     Service_Insurance_provider service_insurance_provider;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)

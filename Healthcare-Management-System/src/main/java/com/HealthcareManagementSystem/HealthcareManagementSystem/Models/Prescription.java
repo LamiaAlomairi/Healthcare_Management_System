@@ -1,10 +1,12 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -23,4 +25,12 @@ public class Prescription {
 
     @Column(name = "Description")
     String description;
+
+//    @OneToMany(mappedBy = "prescription")
+//    @JsonIgnore
+//    private List<Medical_appointment> medicalAppointments;
+
+    @ManyToMany(mappedBy = "prescription")
+    @JsonIgnore
+    private List<Medical_appointment> medicalAppointments;
 }
