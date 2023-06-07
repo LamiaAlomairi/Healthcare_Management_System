@@ -11,20 +11,13 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "Medical_appointment")
-public class Medical_appointment {
+@Table(name = "MedicalAppointment")
+public class MedicalAppointment {
     //المواعيد الطبية
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Medical_appointment_id")
-    Integer medical_appointment_id;
-
-    @Column(name = "Appointment_date")
-    String medical_appointment_date;
-
-//    @ManyToOne
-//    @JoinColumn(name = "Prescription_id")
-//    Prescription prescription;
+    Integer id;
+    String date;
 
     @ManyToMany
     @JoinTable(name = "Medical_appointment_prescription", joinColumns = @JoinColumn(name = "Medical_appointment_id"), inverseJoinColumns = @JoinColumn(name = "Prescription_id"))

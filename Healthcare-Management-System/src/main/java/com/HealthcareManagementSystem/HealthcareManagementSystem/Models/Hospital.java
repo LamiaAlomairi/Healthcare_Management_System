@@ -16,11 +16,8 @@ import java.util.List;
 public class Hospital {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Hospital_id")
-    Integer hospital_id;
-
-    @Column(name = "Hospital_name")
-    String hospital_name;
+    Integer id;
+    String name;
 
     @OneToMany(mappedBy = "hospital")
     @JsonIgnore
@@ -28,6 +25,6 @@ public class Hospital {
 
     @ManyToMany
     @JoinTable(name = "insurance_provider_hospital", joinColumns = @JoinColumn(name = "Hospital_id"), inverseJoinColumns = @JoinColumn(name = "Company_id"))
-    List<Insurance_provider> insurance_providers;
+    List<InsuranceProvider> insuranceProviders;
 
 }

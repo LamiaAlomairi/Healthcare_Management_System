@@ -10,16 +10,14 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "Medical_record")
-public class Medical_record {
+@Table(name = "MedicalRecord")
+public class MedicalRecord {
     //سجلات طبية
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Medical_record_id")
-    Integer medical_record_id;
+    Integer id;
 
-    @Column(name = "Visit_date")
-    String visit_date;
+    String visitDate;
 
     @ManyToOne
     @JoinColumn(name = "Patient_id")

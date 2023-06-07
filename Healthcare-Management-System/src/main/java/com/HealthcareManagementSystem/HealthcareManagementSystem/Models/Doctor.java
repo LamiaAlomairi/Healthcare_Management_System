@@ -16,21 +16,18 @@ import java.util.List;
 public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Doctor_id")
     Integer id;
-
-    @Column(name = "Doctor_name")
-    String doctor_name;
+    String name;
 
     @OneToMany(mappedBy = "doctor")
     @JsonIgnore
-    private List<Medical_appointment> appointments;
+    private List<MedicalAppointment> appointments;
 
     @OneToMany(mappedBy = "doctor")
     @JsonIgnore
     private List<Patient> patients;
 
     @ManyToOne
-    @JoinColumn(name = "Hospital_id", referencedColumnName = "Hospital_id")
+    @JoinColumn(name = "Hospital_id", referencedColumnName = "id")
     Hospital hospital;
 }

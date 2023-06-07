@@ -1,23 +1,23 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Services;
 
 import com.HealthcareManagementSystem.HealthcareManagementSystem.Models.Hospital;
-import com.HealthcareManagementSystem.HealthcareManagementSystem.Repositories.Repository_Hospital;
+import com.HealthcareManagementSystem.HealthcareManagementSystem.Repositories.RepositoryHospital;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Service_Hospital {
+public class ServiceHospital {
     @Autowired
-    Repository_Hospital repository_hospital;
+    RepositoryHospital repositoryHospital;
     public List<Hospital> getAllHospitals() {
 
-        return repository_hospital.findAll();
+        return repositoryHospital.findAll();
     }
 
     public Hospital getHospitalById(Integer id) {
 
-        return repository_hospital.findById(id).get();
+        return repositoryHospital.findById(id).get();
     }
 }

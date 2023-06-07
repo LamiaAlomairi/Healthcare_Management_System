@@ -11,19 +11,14 @@ import javax.persistence.*;
 @Setter
 @Data
 @Entity
-@Table(name = "Insurance_provider")
-public class Insurance_provider {
-    //مزودي التأمين.
+@Table(name = "InsuranceProvider")
+public class InsuranceProvider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
+    String name;
 
-    @Column(name = "Company_id")
-    Integer company_id;
-
-    @Column(name = "Company_name")
-    String company_name;
-
-    @ManyToMany(mappedBy = "insurance_providers")
+    @ManyToMany(mappedBy = "insuranceProviders")
     @JsonIgnore
     private List<Hospital> hospitals;
 }

@@ -1,23 +1,23 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Services;
 
 import com.HealthcareManagementSystem.HealthcareManagementSystem.Models.Prescription;
-import com.HealthcareManagementSystem.HealthcareManagementSystem.Repositories.Repository_Prescription;
+import com.HealthcareManagementSystem.HealthcareManagementSystem.Repositories.RepositoryPrescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Service_Prescription {
+public class ServicePrescription {
     @Autowired
-    Repository_Prescription repository_prescription;
+    RepositoryPrescription repositoryPrescription;
     public List<Prescription> getAllPrescriptions() {
 
-        return repository_prescription.findAll();
+        return repositoryPrescription.findAll();
     }
 
     public Prescription getPrescriptionById(Integer id) {
 
-        return repository_prescription.findById(id).get();
+        return repositoryPrescription.findById(id).get();
     }
 }

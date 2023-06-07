@@ -1,7 +1,7 @@
 package com.HealthcareManagementSystem.HealthcareManagementSystem.Controllers;
 
 import com.HealthcareManagementSystem.HealthcareManagementSystem.Models.Patient;
-import com.HealthcareManagementSystem.HealthcareManagementSystem.Services.Service_Patient;
+import com.HealthcareManagementSystem.HealthcareManagementSystem.Services.ServicePatient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "patient")
-public class Controller_Patient {
+public class ControllerPatient {
     //     http://localhost:8080/patient/getAll
     @Autowired
-    Service_Patient service_patient;
+    ServicePatient servicePatient;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Patient> getAllPatients() {
 
-        return service_patient.getAllPatients();
+        return servicePatient.getAllPatients();
     }
     @GetMapping(value = "getById")
     public Patient getPatientById(@RequestParam Integer id) {
 
-        return service_patient.getPatientById(id);
+        return servicePatient.getPatientById(id);
     }
 }

@@ -17,20 +17,11 @@ public class Prescription {
     //الوصفات الطبية
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Prescription_id")
-    Integer prescription_id;
-
-    @Column(name = "Prescription_name")
-    String prescription_name;
-
-    @Column(name = "Description")
+    Integer id;
+    String name;
     String description;
-
-//    @OneToMany(mappedBy = "prescription")
-//    @JsonIgnore
-//    private List<Medical_appointment> medicalAppointments;
 
     @ManyToMany(mappedBy = "prescription")
     @JsonIgnore
-    private List<Medical_appointment> medicalAppointments;
+    private List<MedicalAppointment> medicalAppointments;
 }
